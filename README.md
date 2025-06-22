@@ -38,11 +38,16 @@ You can run this app locally or deploy it on platforms like Render or Streamlit 
 4. Project Structure
    
   ├── models/
+  
   │   ├── text_classifier.pkl          # Pretrained text classification model
   │   └── image_cnn_model.keras         # Pretrained image CNN model
+  
   ├── datasets/                        # (Optional) datasets used for training
+  
   ├── app.py                          # Main Streamlit app code
+  
   ├── requirements.txt                # Python dependencies
+  
   └── README.md                      # This file
 
   5.Usage
