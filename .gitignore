@@ -1,11 +1,18 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*.so
 
-# Virtual Environments
+# Virtual environments
 .venv/
 testenv/
 
-# OS Files
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# OS files
 .DS_Store
 Thumbs.db
