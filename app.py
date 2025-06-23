@@ -1,3 +1,6 @@
+import gdown
+import zipfile
+import os
 import streamlit as st
 import re
 import nltk
@@ -12,6 +15,17 @@ from nltk.corpus import stopwords
 nltk.download('punkt', quiet=True)
 nltk.download('wordnet', quiet=True)
 nltk.download('stopwords', quiet=True)
+
+
+model_zip_path = "models/image_cnn_model.zip"
+model_dir = "models/image_cnn_model.keras"
+
+# Download if not exists
+if not os.path.exists(model_dir):
+    gdown.download("https://drive.google.com/file/d/1iCLXvFZw9lCTnhdEuExTdwPxZzKv1gGQ/view?usp=drive_link", model_zip_path, quiet=False)
+    with zipfile.ZipFile(model_zip_path, 'r') as zip_ref:
+        zip_ref.extractall("models")
+
 
 # Load models
 loaded_model, tfidf_v = joblib.load("models/text_classifier.pkl")
