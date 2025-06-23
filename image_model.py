@@ -37,7 +37,7 @@ def train_image_model():
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     model.fit(training_set, validation_data=test_set, epochs=10)
 
-    model.save("models/image_cnn_model.keras")
+    model.save("models/image_cnn_model.h5")
 
 if __name__ == "__main__":
     train_image_model()
