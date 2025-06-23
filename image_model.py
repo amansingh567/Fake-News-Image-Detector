@@ -26,7 +26,8 @@ def train_image_model():
     )
 
     model = Sequential()
-    model.add(Conv2D(filters = 32 , kernel_size = 3 ,strides=(1,1), activation = 'relu',input_shape= [128 , 128 ,3]))
+    model.add(tf.keras.Input(shape=(128, 128, 3)))
+    model.add(Conv2D(filters = 32 , kernel_size = 3 ,strides=(1,1), activation = 'relu'))
     model.add(MaxPooling2D(pool_size = 2 ,strides = 2))
     model.add(Conv2D(filters = 32 , kernel_size = 3 ,strides=(1,1), activation = 'relu'))
     model.add(MaxPooling2D(pool_size = 2 ,strides = 2))
@@ -37,7 +38,7 @@ def train_image_model():
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     model.fit(training_set, validation_data=test_set, epochs=10)
 
-    model.save("models/image_cnn_model.h5")
+    model.save("models/image_cnn_model.keras", save_format="keras")
 
 if __name__ == "__main__":
     train_image_model()

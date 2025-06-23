@@ -15,7 +15,7 @@ nltk.download('stopwords', quiet=True)
 
 # Load models
 loaded_model, tfidf_v = joblib.load("models/text_classifier.pkl")
-model_image = tf.keras.models.load_model("models/image_cnn_model.h5")
+model_image = tf.keras.models.load_model("models/image_cnn_model.keras")
 
 st.title("📰 Fake News & Image Validation System")
 
