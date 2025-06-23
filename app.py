@@ -26,6 +26,8 @@ if not os.path.exists(model_dir):
     with zipfile.ZipFile(model_zip_path, 'r') as zip_ref:
         zip_ref.extractall("models")
 
+file_size = os.path.getsize(model_dir)
+st.write(f"Downloaded model file size: {file_size} bytes")
 
 # Load models
 loaded_model, tfidf_v = joblib.load("models/text_classifier.pkl")
