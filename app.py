@@ -18,20 +18,22 @@ nltk.download('stopwords', quiet=True)
 
 
 model_zip_path = "models/image_cnn_model.zip"
-model_dir = "models/image_cnn_model.keras"
+model_keras_path = "models/image_cnn_model.keras"
+gdrive_url = "https://drive.google.com/uc?id=1iCLXvFZw9lCTnhdEuExTdwPxZzKv1gGQ"
 
-# Download if not exists
-if not os.path.exists(model_dir):
-    gdown.download("https://drive.google.com/file/d/1iCLXvFZw9lCTnhdEuExTdwPxZzKv1gGQ/view?usp=drive_link", model_zip_path, quiet=False)
+# Download and extract if not already present
+if not os.path.exists(model_keras_path):
+    gdown.download(gdrive_url, model_zip_path, quiet=False)
     with zipfile.ZipFile(model_zip_path, 'r') as zip_ref:
         zip_ref.extractall("models")
 
-file_size = os.path.getsize(model_dir)
-st.write(f"Downloaded model file size: {file_size} bytes")
+# Confirm model file exists
+file_size = os.path.getsize(model_keras_path)
+st.write(f"Downloaded model file size: {file_size} bytes")  # should match local
 
 # Load models
 loaded_model, tfidf_v = joblib.load("models/text_classifier.pkl")
-model_image = tf.keras.models.load_model("models/image_cnn_model.keras")
+model_image = tf.keras.models.load_model(model_keras_path)
 
 st.title("📰 Fake News & Image Validation System")
 
