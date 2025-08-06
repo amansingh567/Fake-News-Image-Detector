@@ -16,7 +16,8 @@ This project integrates:
 ## 🎥 Demo
 
 📽️ **Video Demo**:  
-[Click here to watch]([https://your-video-link.com](https://drive.google.com/file/d/1iWx1yGh_3HST9KluA5wMDEXGy5WGrzF0/view?usp=drive_link))  
+[Click here to watch](https://drive.google.com/file/d/1iWx1yGh_3HST9KluA5wMDEXGy5WGrzF0/view?usp=drive_link)
+ 
 
 ---
 
@@ -107,6 +108,7 @@ You can retrain the models using your own datasets from the datasets/ directory.
 
 📜 License
 This project is licensed under the MIT License.
+
 
 
 
